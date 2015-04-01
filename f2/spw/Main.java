@@ -6,9 +6,9 @@ import javax.swing.JFrame;
 
 public class Main {
 	public static void main(String[] args){
-		JFrame frame = new JFrame("Space War");
+		JFrame frame = new JFrame("Space Thunder");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(400, 650);
+		frame.setSize(420, 700);
 		frame.getContentPane().setLayout(new BorderLayout());
 		
 		SpaceShip v = new SpaceShip(220, 580, 50, 50);
