@@ -17,7 +17,7 @@ public class GamePanel extends JPanel {
 	public GamePanel() {
 		bi = new BufferedImage(400, 600, BufferedImage.TYPE_INT_ARGB);
 		big = (Graphics2D) bi.getGraphics();
-		big.setBackground(Color.White);
+		big.setBackground(Color.BLACK);
 	}
 
 	public void updateGameUI(GameReporter reporter){
@@ -30,6 +30,22 @@ public class GamePanel extends JPanel {
 		}
 		
 		repaint();
+	}
+	public void RandomColor(){
+		int G int(Math.random()*256);
+		int R int(Math.random()*256);
+		int B int(Math.random()*256);
+		int y= int(Math.random()*50);
+		
+		Color color = new Color(G,R,B);
+		Color colors = new Color(0,0,0);
+		System.out.println(color + "  " + y);
+		if(color == color.RED  || color == color.BLUE){
+	      	color = color1;
+		}
+		
+		big.setBackground(color);
+		}
 	}
 
 	@Override
