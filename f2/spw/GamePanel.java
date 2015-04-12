@@ -37,7 +37,7 @@ public class GamePanel extends JPanel {
 		big.setColor(Color.BLACK);
 		big.fillRect(7,30,366,20);
 		big.setColor(Color.BLUE);
-		big.fillRect(x,30,y,5);
+		big.fillRect(x,35,y,5);
 	}
 	public void RandomColor(){
 		int G int(Math.random()*256);
