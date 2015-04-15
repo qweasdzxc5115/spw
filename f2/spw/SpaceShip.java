@@ -2,6 +2,8 @@ package f2.spw;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Toolkit;
+import java.awt.Image;
 
 public class SpaceShip extends Sprite{
 
@@ -30,8 +32,8 @@ public class SpaceShip extends Sprite{
 		y+=(step*direction1);
 		if(y<0)
 			y=0;
-		if(y>550-height)
-			y=550-height;
+		if(y>600-height)
+			y=600-height;
 	}
 
 }
