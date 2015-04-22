@@ -16,8 +16,10 @@ public class SpaceShip extends Sprite{
 
 	@Override
 	public void draw(Graphics2D g) {
-		g.setColor(Color.GREEN);
-		g.fillRect(x, y, width, height);
+		//g.setColor(Color.GREEN);
+		//g.fillRect(x, y, width, height);
+		Image img = Toolkit.getDefaultToolkit().getImage("bul2.PNG");
+		g.drawImage(Img , x , y , width , height , null);
 		
 	}
 
