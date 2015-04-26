@@ -16,15 +16,20 @@ public class GameEngine implements KeyListener, GameReporter{
 		
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private ArrayList<Enemy2> enemies2 = new ArrayList<Enemy2>();
+	private ArrayList<Bullet> bullet = new ArrayList<Bullet>();
+	private ArrayList<Item> item = new ArrayList();
 	private SpaceShip v;	
 	
 	private Timer timer;
 	
 	private long score = 0;
-	int x = 5;
-	int y = 366;
+	//int x = 5;
+	//int y = 366;
 	private int time = 0;
 	private double difficulty = 0.3;
+	private int b = 350;
+	private int e = 0;
+	private int hearth = 0;
 	
 	public GameEngine(GamePanel gp, SpaceShip v) {
 		this.gp = gp;
@@ -37,6 +42,10 @@ public class GameEngine implements KeyListener, GameReporter{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				process();
+				process2();
+				process3();
+				process4();
+				
 			}
 		});
 		timer.setRepeats(true);
@@ -122,7 +131,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	
 	
-	gp.HP(x,y);
+	gp.HP(b);
 	}
 	public void die(){
 		gp.HP(x,y);
@@ -169,3 +178,43 @@ public class GameEngine implements KeyListener, GameReporter{
 		//do nothing		
 	}
 }
+	private void generateBullet(){
+		Bullet b = new Bullet((v.x)+(v.width/2),v.y);
+		gp.spirites add(b);
+		bullet.add(b);
+	}
+	private void process3(){
+		Interator<Bullet> e_iter = bullet.interator();
+		while(e_iter.hasnext){
+			Bullet b = e_iter.next();
+			b.proceed();
+			if(!b.isAlive()){
+				e_iter.remove();
+				gp.spirites.remove(b);
+			}
+		}
+		private void generateItem(){
+			Item e = new Item((int)(Math.random()*390),2);
+			gp.spirites.add(e);
+			item.add(e);
+		}
+		private void process4(){
+		 	if(Math.random()<difficulty/10){
+		 		generateItem();
+		 	}
+			if(hearth>0){
+				hearth--;
+				
+			Interator<Item>  e_iter = item.interator();
+		while(e_iter.hasnext){
+			Item e = e_iter.next();
+			e.proceed();
+			if(!e.isAlive()){
+				e_iter.remove();
+				gp.spirites.remove(e);	
+				
+			}
+		}
+		
+	}
+	}
