@@ -55,6 +55,14 @@ public class GamePanel extends JPanel {
 		big.setBackground(color);
 		}
 	}
+	
+	public void Start(GameReporter reporter){
+		big.clearRect(0,0,500,600);
+		big.setColor(Color.Green);
+		big.setFont(big.getfont().derivefont(16.0f));
+		big.drawString(String.fomat("Press \"Enter \"to Start game",140,280);
+		repaint();
+	} 
 
 	@Override
 	public void paint(Graphics g) {
